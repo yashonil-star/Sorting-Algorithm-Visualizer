@@ -211,4 +211,15 @@ def quick_sort(nums):  # n^2
             _quick_sort(items, low, split_index)
             _quick_sort(items, split_index + 1, high)
 
-    _quick_sort(nums, 0, nums.get_len() - 1)
+    _quick_sort(nums, 0, nums.get_len() - 1) 
+    
+    
+    # Create a helper function that will be called recursively
+    def _quick_sort_temp(items1, low1, high1):
+        if low1 < high1:
+            # This is the index after the pivot, where our lists are split
+            split_index = partition(items1, low1, high1)
+            _quick_sort(items1, low1, split_index)
+            _quick_sort(items1, split_index + 1, high1)
+
+    _quick_sort_temp(nums1, 0, nums1.get_len() - 1) 
